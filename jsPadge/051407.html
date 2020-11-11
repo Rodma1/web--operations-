@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- Array常用属性及方法 -->
+		<!-- 注意：数组长度可以动态调整 -->
+		<script type="text/javascript">
+			var myA=[1,5,8,3,10];
+			var myB=[];
+			var s1,s2;
+			console.log(myA.length);
+			//console.log(myA.toString());//将数组内元素用逗号分隔开转换成字符串形式输出
+			s1=myA.toString();
+			console.log(s1);
+			s2=myA.join("|");//在字符串之间插入自定义分割符号
+			console.log(s2);
+			myB=s2.split("|");//拆分为字符串形式
+			console.log(myB);
+			
+			myA.push(20);//在数组尾部添加元素
+			console.log(myA);
+			myA.unshift(30);//在数组头部添加元素
+			console.log(myA);
+			
+			myA.pop();//在尾部删除一个元素
+			console.log(myA);
+			myA.shift();//在头部删除一个元素
+			console.log(myA);
+			
+			myA.sort();//按(第一个)字符进行排序：例如1，10，3，5，8
+			console.log(myA);
+			
+			
+			myA.sort(function(n1,n2)){
+				return n1-n2;//按数字递增排序
+				return n2-n1;//按数字递减排序
+			}
+			console.log(myA);
+			
+		</script>
+		
+	</body>
+</html>

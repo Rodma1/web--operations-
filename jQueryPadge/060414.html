@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("td").css("color",function(){
+					if($(this).text()<60){
+						return "red";
+					}
+				})
+			})
+		</script>
+		<table border="1px" width="600px">
+			<tr>
+				<td>55</td>
+				<td>66</td>
+				<td>77</td>
+			</tr>
+			<tr>
+				<td>44</td>
+				<td>33</td>
+				<td>99</td>
+			</tr>
+		</table>
+	</body>
+</html>

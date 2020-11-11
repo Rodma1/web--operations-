@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			/* 绝对定位
+			使用绝对定位方式的元素,会相对于距离最近的一个已经定位的祖先元素为基准,通过指定偏移量进行偏移
+			使用绝对定位方式的元素,会脱离标准流,其兄弟元素会认为这个元素已经不存在了
+			使用绝对定位方式的元素,基准元素的padding对其不起作用
+			 */
+			
+			.father{
+				/* 只要该父元素有position属性,无论是相对还是绝对,都可以说明该父元素是已经定位了的 */
+				position: relative;
+				/* 相对于father进行偏移 */
+			}
+			div{
+				width: 100px;
+				height: 100px;
+			}
+			.c1{
+				/* c1距离父元素最近 */
+				background-color: red;
+				position: absolute;
+				left: 100px;/* 在写father前，相对于body偏移自身大小后不对齐，因该盒子距离Body边框还有一定的距离 
+				可以认为的加一个父元素解决该问题*/
+			}
+			.c2{
+				background-color: blue;
+			}
+			.c3{
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="c1"></div>
+			<div class="c2"></div>
+			<div class="c3"></div>
+		</div>
+		<!-- *****子绝父相*****       （子绝父绝少用）
+		 大盒子用相对定位：其变动不影响其他大盒子-->
+	</body>
+</html>

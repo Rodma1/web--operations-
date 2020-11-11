@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>调查表</title>
+</head>
+<body>
+<form action="job_3.html" method="get">
+<!--checkbox复选框，value命名是为了方便计算机识别-->
+请选择你喜欢的运动项目：</br>
+<input type="checkbox" name="sports" value="lanqiu">篮球
+<input type="checkbox" name="sports" value="zuqiu">足球
+<input type="checkbox" name="sports" value="yumaoqiu">羽毛球</br>
+<!--radio单选框-->
+请选择你的性别：</br>
+<input type="radio" name="sex" value="man" checked="checked">男
+<!-- //checked表示预先选中 -->
+<input type="radio" name="sex" value="women">女</br>
+<!--下拉列表-->
+请选择你喜欢的城市：
+<select name="address">
+<option value="beijing">海南</option>
+<option value="zhongguo" selected>中国</option> 
+//默认选中
+<option value="waiguo">外国</option>
+</select><br/>
+<!--文本框-->
+请填写您的建议：</br>
+<textarea name="text" cols="80" rows="20">
+</textarea></br>
+<!--上传文件-->
+请上传你的照片：</br>
+<input type="file" name="picture"></br>
+<!--图片按钮-->
+<input type="submit" name="" id="" value="提交" /><br>
+<input type="reset" name="" id="" value="重置" /><br>
+<input type="image" src="1.jpg"/>
+<!--隐藏域的使用-->
+<input type="hidden" name="data" value="chonz"/></br>
+</form>
+</body>
+</html>

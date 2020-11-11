@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>基础、复合选择器</title>
+		<script src="../js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("#id1").css("color","blue");
+				})
+				$("#btn2").click(function(){
+					$(".c1").css("color","skyblue");
+				})
+				$("#btn3").click(function(){
+					$("p").css("color","red");
+				})
+				$("#btn4").click(function(){
+					$("p.c1").css("color","gold");
+				})
+				$("#btn5").click(function(){
+					$("p,h4").css("color","pink");
+				})
+			})
+		</script>
+		<button type="button" id="btn1">ID选择器</button>
+		<button type="button" id="btn2">类选择器</button>
+		<button type="button" id="btn3">标签选择器</button>
+		<button type="button" id="btn4">交集选择器</button>
+		<button type="button" id="btn5">并集选择器</button>
+		<p id="id1">我是一个有ID的段落</p>
+		<p class="c1">我是一个有类名的段落</p>
+		<p class="c1">我是一个有类名的段落</p>
+		<p class="c1">我是一个有类名的段落</p>
+		<h4 class="c1">我是一个有类名的标题</h4>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- HTML 属性中的值应使用 v-bind 指令。
+以下实例判断 use 的值，如果为 true 使用 class1 类的样式，否则不使用该类： -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<label for="r1">修改颜色</label><input type='checkbox' v-model="use" id="r1">
+			<br><br>
+			<div v-bind:class="{'class1':use}">
+				<!-- v-bind:class指令 -->
+			</div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					// v-bind相当于判断的意思
+					use:false
+				}
+			})
+		</script>
+	</body>
+	
+</html>

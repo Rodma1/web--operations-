@@ -1,0 +1,31 @@
+<!-- 数据绑定最常见的形式就是使用 {{...}}（双大括号）的文本插值： -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 引用vue的脚本文件 -->
+		<script src="../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{ msg }}<!-- 相当于输出一个变量 -->
+			<br>
+			{{chen}}
+			<div v-html="message"></div>
+		</div>
+		<script type="text/javascript">
+			// 相当于定义一个函数，然后在函数里面定义变量
+			var vm=new Vue({ 
+				// 这里的el是英文的小写l
+				el:'#app',
+				data:{
+					msg:'hello Vue',
+					chen:'第一次接触vue',
+					message:'<h1>hello vue</h1>'
+				}
+			})
+		</script>
+		
+	</body>
+</html>

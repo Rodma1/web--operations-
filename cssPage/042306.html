@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			/* 布局二:伪类元素法 */
+			
+			.son1{
+				width: 100px;
+				height: 150px;
+				background-color: red;
+				float: left;
+			}
+			.son2{
+				width: 100px;
+				height: 150px;
+				background-color: blue;
+				float: left;
+			}
+			.father{
+				width: 250px;
+				/* height: 120px; */
+				background-color: gold;
+			}
+			.brother{
+				width: 250px;
+				height: 150px;
+				background-color: green;
+			}
+			.clearfix:after{
+				/* after 伪元素
+				选定clearfix这个元素,在他的最后边 */
+				/* 第一种做法(建议,方便调试) */
+				content: ".";
+				display: block;  /* 行内元素转换为块元素 */
+				clear: both;
+				visibility: hidden;  /* 隐藏content */
+				height: 0px; /* content高度为0 */
+				
+				/* 第二种做法
+				content: "";
+				display: block;
+				clear: both; */
+			}
+		</style>
+	</head>
+	<body>
+		<!-- (.father>.son1+.son2)+.bother -->
+		<div class="father clearfix">
+			<div class="son1"></div>
+			<div class="son2"></div>
+		</div>
+		<div class="brother"></div>
+	</body>
+</html>

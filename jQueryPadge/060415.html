@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery简易计算器</title>
+		<script src="../js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body {
+				width: 500px;
+				margin: 50px auto;
+				padding: 30px;
+				border: 2px solid #999;
+			}
+
+			#num1 {
+				width: 99%;
+				height: 40px;
+				font-size: 20px;
+			}
+
+			#wrap {}
+
+			#wrap button {
+				height: 40px;
+				margin-top: 20px;
+			}
+
+			#wrap .right {
+				float: right;
+				width: 25%;
+			}
+
+			#wrap .left {
+				float: left;
+				width: 75%;
+			}
+
+			#wrap .left button {
+				width: 32%;
+			}
+
+			#wrap .right button {
+				width: 100%;
+			}
+
+			.res {
+				width: 50%;
+				float: left;
+				margin-top: -40px;
+				margin-left: 25%;
+			}
+
+			.res button {
+				width: 48%;
+				height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<input id="num1" type="text" value="">
+		<div id="wrap">
+			<div class="right">
+				<button>+</button>
+				<button>-</button>
+				<button>*</button>
+				<button>/</button>
+			</div>
+			<div class="left">
+				<button>0</button>
+				<button>1</button>
+				<button>2</button>
+				<button>3</button>
+				<button>4</button>
+				<button>5</button>
+				<button>6</button>
+				<button>7</button>
+				<button>8</button>
+				<button>9</button>
+			</div>
+		</div>
+		<div class="res">
+			<button id="result">等于</button>
+			<button id="clear">清空</button>
+		</div>
+		<div style="clear: both;"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var res = 0; //运算结果
+				//给数字和运算符按钮添加事件
+				$("#wrap button").click(function() {
+					var c = $(this).text(); //用来储存按钮值
+					//输入的第一个字符必须是数字
+					if ($("#num1").val() == '') { //判断是否是第一个字符
+						if (isNaN(c)) { //判断要输入的第一个字符是否是数字
+							//不是数字
+						} else {
+							$("#num1").val(c); //是数字则添加到字符串中
+						}
+					} else { //字符串不是空
+						if ($("#num1").val().indexOf("=") < 0) { //判断是否含有‘=’
+							$("#num1").val($("#num1").val() + c); //不含有把c添加到字符串中
+						} else { //含有‘=’
+							$("#num1").val(''); //清空字符串
+							//判断输入的是否是数字
+							if (isNaN(c)) {
+								$("#num1").val('');
+							} else {
+								$("#num1").val(c);
+							}
+						}
+					}
+				});
+				//给等于按钮添加事件 ，计算结果
+				$("#result").click(function() {
+					//计算结果赋值给res，保留俩位小数
+					res = eval($("#num1").val()).toFixed(2);
+					//把结果用=连接到字符串并输出
+					$("#num1").val($("#num1").val() + '=' + res);
+				});
+				//给清空按钮添加事件
+				$("#clear").click(function() {
+					//清空字符串
+					$("#num1").val('');
+				});
+			})
+		</script>
+	</body>
+</html>

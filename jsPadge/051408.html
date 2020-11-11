@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 数组举例 -->
+		<script type="text/javascript">
+			//1.将1-100存入数组
+			var myA=[];
+			for(var i=1;i<=100;i++){
+				myA[i-1]=i;//初始值从1开始
+			}
+			console.log(myA);
+			
+			
+			//2.将1-100中能被7整出的数存入数组
+			for(var i=1;i<=100;i++){
+				if(i%7===0){
+					myA[myA.length]=i;//数组长度可以动态调整
+				}
+			}
+			console.log(myA);
+			
+			
+			//3.随机生成10个数,将其存放到数组中
+			var myA[];
+			var myRnd;
+			for(var i=1;i<=10;i++){
+				myRnd=parseInt((30-10+1)*Math.random())+10;
+				myA[i-1]=myRnd;
+			}
+			console.log(myA);
+			
+			//4.随机生成10个不相等的数,将其存放到数组中
+			var myA[];
+			var myRnd;
+			for(var i=1;i<=10;i++){
+				myRnd=parseInt((30-10+1)*Math.random())+10;
+				while(isExit(myRnd,myA)){
+					myRnd=parseInt((30-10+1)*Math.random())+10;
+				}
+				myA[i-1]=myRnd;
+			}
+			console.log(myA);
+			function isExit(n,myA){//随机数n是否在myA数组中
+				for(var i=0;i<myA.length;i++){
+					if(myA[i]===n){
+						return true
+					}
+				}
+				return false
+			}
+			
+			//用函数形式完成第四个实例
+			console.log(getRndNumber(10,50,20));//调用函数，10-50之间取20个不相等的随机数
+			//封装函数：返回[n1,n2]范围之间n个随机数
+			function getRndNumber(n1,n2,n){//n1-n2范围中取n个随机数
+				var myA[];
+				var myRnd;
+				for(var i=1;i<=n;i++){
+					myRnd=parseInt((n2-n1+1)*Math.random())+n1;
+					while(isExit(myRnd,myA)){
+						myRnd=parseInt((n2-n1+1)*Math.random())+n1;
+					}
+					myA[i-1]=myRnd;
+				}
+				return myA;
+			}
+			function isExit(n,myA){//随机数n是否在myA数组中
+				for(var i=0;i<myA.length;i++){
+					if(myA[i]===n){
+						return true
+					}
+				}
+				return false
+			}
+			
+			
+			
+			//5.对随机生成的10个数进行排序
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

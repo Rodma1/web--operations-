@@ -1,0 +1,30 @@
+<!-- prop 是子组件用来接受父组件传递过来的数据的一个自定义属性。
+
+父组件的数据需要通过 props 把数据传给子组件，子组件需要显式地用 props 选项声明 "prop" -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<child message="chen"></child>
+		</div>
+		<script type="text/javascript">
+			//注册 component(组成) template(样式)
+			Vue.component('child',{
+				//声明props
+				props:['message'],
+				//也可以"this.message"这样使用
+				//template读取数据
+				template:'<span>{{message}}</span>',
+			})
+			//创建根实例
+			new Vue({
+				el:'#app'
+			})
+		</script>
+	</body>
+</html>

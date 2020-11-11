@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//原生入口函数
+			window.onload=function(){
+				var myp=document.getElementById("id1");
+				myp.style.color="blue";
+			}
+			//会覆盖上面的window.onload=function()
+			//window.onload=function(){
+			//	console.log('OK');
+			//}
+		</script>
+		<p id="id1">我是一个有ID的段落</p>
+	</body>
+</html>

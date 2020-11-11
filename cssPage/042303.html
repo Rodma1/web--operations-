@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			/* 布局二（给父元素设置高度,添加额外元素法,伪元素法 ）
+			布局二：添加额外元素法*/
+			
+			
+			*{
+				margin: 0;
+				padding: 0px;
+			}
+			div{
+				width: 900px;
+				margin: 0 auto 4px;
+			}
+			.header{
+				height: 100px;
+				background-color: pink;
+			}
+			.nav{
+				height: 40px;
+				background-color: deeppink;
+			}
+			.main{
+				
+				background-color: red;
+			}
+			.main_1{
+				width: 300px;
+				height: 400px;
+				background-color: skyblue;
+				float: left;
+				margin-bottom: 0;
+			}
+			.main_2{
+				width: 300px;
+				height: 400px;
+				background-color: blue;
+				float: left;
+				margin-bottom: 0;
+			}
+			.main_3{
+				width: 300px;
+				height: 400px;
+				background-color: green;
+				margin-bottom: 0;
+				float: left;
+			}
+			/* main footer间距为父盒子main与子盒子下外边距之和
+			所以需要把所有参与浮动的子盒子下外边距设为0 */
+			.footer{
+				
+				height: 60px;
+				background-color:sandybrown;
+			}
+			.clear{
+				clear: both;
+				margin-bottom: 0;
+			}
+			/* clear也是一个div盒子,也被div设定了4px的下外边距,需要把下外边距设为0 */
+		</style>
+	</head>
+	<body>
+		<!-- 三个盒子并排 -->
+		<!-- .header+.nav+(.main>.main_1+.main_2+.main_3)+.footer 快捷键 -->
+		<div class="header"></div>
+		<div class="nav"></div>
+		<div class="main">
+			<div class="main_1"></div>
+			<div class="main_2"></div>
+			<div class="main_3"></div>
+			<!-- 嵌套盒子的命名根据具体内容 -->
+			<div class="clear"></div>
+		</div>
+		
+		<div class="footer"></div>
+	</body>
+</html>
+<!-- 给父元素修改高度 -->

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 输入一个按钮样式,显示值是开始,有点击事件开始 -->
+			<input type="button" value="开始" @click="start"/>
+			<input type="button" value="停止" @click="stop" />
+			<p v-html="msg"></p>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					msg:'<h3>循环播放</h3>',
+					timeID: null
+				},
+				methods: {
+							
+					start() {
+						if(this.timeID!==null) return
+						// var _this=this
+						this.timeID = window.setInterval(()=> {
+							var s = this.msg.substring(0, 1)
+							var e = this.msg.substring(1)
+							this.msg = e + s
+						}, 400)
+				  },
+					stop() {
+						window.clearInterval(this.timeID)
+						this.timeID=null
+		
+					}
+		
+				}
+			})
+		</script>
+		
+	</body>
+</html>

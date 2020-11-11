@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>层次选择器</title>
+		<script src="../js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("form input").css("background-color","red");
+				})
+				$("#btn2").click(function(){
+					$("form>input").css("background-color","blue");
+				})
+				$("#btn3").click(function(){
+					$("form+input").css("background-color","skyblue");
+				})
+				$("#btn4").click(function(){
+					$("form~input").css("background-color","green");
+				})
+			})
+		</script>
+		<button type="button" id="btn1">后代选择器</button>
+		<button type="button" id="btn2">父子选择器</button>
+		<button type="button" id="btn3">前后选择器</button>
+		<button type="button" id="btn4">前兄弟选择器</button>
+		<form action="">
+			<input type="" name="" id="" value="" />
+			<div>
+				<input type="" name="" id="" value="" />
+			</div>
+		</form>
+		<input type="" name="" id="" value="" />
+		<input type="" name="" id="" value="" />
+		<div>
+			<input type="" name="" id="" value="" />
+		</div>
+		<input type="" name="" id="" value="" />
+	</body>
+</html>

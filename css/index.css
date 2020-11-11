@@ -1,0 +1,126 @@
+.img-circle {
+			    border: 3px solid white;
+			    border-radius: 50%;
+			}
+			.section {
+			    background-color: #fff;
+			    padding: 15px;
+			    margin-bottom: 10px;
+			    border-radius: 10px;
+			}
+			#header {
+			   background-image: url(../img/6.jpg);
+			    background-size: cover;
+			}
+			#header img {
+			    display: block;
+			    width: 80px;
+			    height: 70px;
+			    margin: auto;
+			}
+			#header p {
+			    font-size: 15pt;
+			    color: #3b464c;
+			    padding-top: 5px;
+			    margin: 0;
+			    font-weight: bold;
+			    text-align: center;
+			}
+			
+			#contacts img {
+			    height: 50px;
+			    width: 50px;
+			    margin-left: 7px;
+			    margin-right: 7px;
+			}
+			#contacts a {
+			    text-decoration: none;
+			}
+
+div .header,div .nav,div .main,div .footer{
+				margin: 0;
+				padding: 0px;
+			}
+			/* *{
+				margin: 0;
+				padding: 0px;
+			} */
+			div{
+				width: 1500px;
+				margin: 0 auto ;
+			}
+			.header{
+				font-family: "宋体";
+				background-color: 	SkyBlue;
+				width: 1290px;
+				height: 70px;
+				margin: 0 auto;
+				text-align: center;
+				line-height: 70px;
+			}
+			.nav{
+				height: 25px;
+				background-color:  	SkyBlue;
+			}
+			.main{
+				background-color: 	SkyBlue;
+			}
+			.Html{
+				width: 300px;
+				float: left;
+				margin-bottom: 0;
+				text-align: center;
+			}
+			.CSS{
+				width: 300px;
+				float: left;
+				margin-bottom: 0;
+				text-align: center;
+			}
+			.JavaScript{
+				width: 300px;
+				margin-bottom: 0;
+				float: left;
+				text-align: center;
+			}
+			.jQuery{
+				width: 300px;
+				margin-bottom: 0;
+				float: left;
+				text-align: center;
+			}
+			.vue{
+				width: 300px;
+				margin-bottom: 0;
+				float: left;
+				text-align: center;
+			}
+			.footer{
+				height: 60px;
+				text-align: center;
+				line-height: 60px;
+				background-color: LemonChiffon;
+			}
+			.clear{
+				clear: both;
+				margin-bottom: 0;
+			}
+			ul {
+				list-style-type: none;
+				/* 去除无序列表前的标识(列表前的小点) */
+			}
+			.button{
+				width: 50px;
+				height: 50px;
+				background-color:LightGrey;
+				text-align: center;
+				padding-top: 5px;
+				position: fixed;/* 固定定位 */
+				bottom: 10px;
+				right: 10px;
+			}
+			a:hover {
+			   color: red;
+			}
+			
+			

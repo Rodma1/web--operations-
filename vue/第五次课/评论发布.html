@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+		<link rel="stylesheet" type="text/css" href="../../cssVue/bootstrap.css" />
+		<title></title>
+	</head>
+	<body>
+		<!-- 获取内容和时间：item.content（输入内容） item.item:(时间日期) -->
+		<div id="app">
+			<com1 @myfun="publish"></com1>
+			<ul>
+				<li class="list-group-item" v-for="item in newslist">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<!-- //内容 -->
+							{{item.content}}
+						</div>
+						<div class="panel-footer text-right">时间：{{item.time}}</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 获取内容输出 -->
+		
+		<!-- 界面布局-->
+		<template id="mytemp">
+			<!-- 界面头部 -->
+			<div class="panel  panel-primary">
+				<div class="panel-heading">
+					<h2 class="panel-title">记录生活的点点滴滴</h2>
+				</div>
+				<!-- 界面身体 -->
+				<div class="panel-body">
+					<div class="form-group">
+						<!-- //label：标签 -->
+						<label>内容</label>
+						<!-- //输入内容的边框 -->
+						<textarea class="form-control" v-model="content"></textarea>
+					</div>
+					<!-- //发布按钮 -->
+					<div class="form-group text-right">
+						<input type="button" value="发布" class="btn btn-primary" @click="spublish"/>
+					</div>
+					
+						<button type="button" @click="del(i)" class="btn btn-primary">删除</button>
+					
+				</div>
+			</div>
+		</template>
+		<!-- 界面布局 -->
+		
+		<!-- 创建根实例 -->
+		<script type="text/javascript">
+			var vm= new Vue({
+				el:'#app',
+				// 用来显示写入的数据内容.
+				//在方法中使用this.属性名就可以直接访问data中的数据
+				//在构造函数外部可以使用vm.方法名定义或者调用方法
+				data:{
+					newslist:[]
+				},
+				//构造函数
+				methods:{
+					publish(item){
+						this.newslist.push(item);
+					},
+					del(item){
+						this.newslist.splice(item,1);
+						
+					}
+
+				},
+				components:{
+					com1:{
+						template:'#mytemp',
+						data(){
+							return{
+								content:''
+							}
+						},
+						methods:{
+							
+							spublish(){
+								var obj={
+									content:this.content,
+									time: new Date().toLocaleDateString()
+								};
+								//子组件可以使用 $emit 触发父组件的自定义事件
+								this.$emit('myfun',obj);
+								this.content="";
+							}
+							
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

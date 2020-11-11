@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery过滤器(基本过滤器)</title>
+		<script src="../js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("li:first").css("background-color","pink");
+				})
+				$("#btn2").click(function(){
+					$("li:last").css("background-color","skyblue");
+				})
+				$("#btn3").click(function(){
+					$("li:not(.c1)").css("background-color","yellowgreen");
+				})
+				$("#btn4").click(function(){
+					$("li:odd").css("background-color","yellow");
+				})
+				$("#btn5").click(function(){
+					$("li:even").css("background-color","green");
+				})
+			})
+		</script>
+		<button type="button" id="btn1">first过滤器</button>
+		<button type="button" id="btn2">last过滤器</button>
+		<button type="button" id="btn3">not过滤器</button>
+		<button type="button" id="btn4">偶数过滤器</button>
+		<button type="button" id="btn5">奇数过滤器</button>
+		<ul>
+			<li>列表项目</li>
+			<li>列表项目</li>
+			<li>列表项目</li>
+			<li class="c1">列表项目</li>
+			<li>列表项目</li>
+			<li>列表项目</li>
+			<li>列表项目</li>
+			<li>列表项目</li>
+			<li>列表项目</li>
+		</ul>
+	</body>
+</html>

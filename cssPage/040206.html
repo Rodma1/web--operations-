@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			/* 继承字号大小问题 */
+			
+			.c1{
+				font-size: 20px;
+			}
+			.c1 p{
+				font-size: 2em; 继承div的大小,为div字号大小的两倍
+			}
+			.c2 p{
+				font-size: 2em; 参照默认字号16px的两倍
+			}
+		</style>
+	</head>
+	<body>
+		<!-- div>p  tab -->
+		<div class="c1">
+			<p>运城学院</p>
+		</div>
+		<div class="c2">
+			<p>数信学院</p>
+		</div>
+	</body>
+</html>

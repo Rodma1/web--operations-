@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 180px;
+				position: relative;
+			}
+			div img{
+				/* 处理图片大小 */
+				width: 180px;
+			}
+			div h3{
+				position: absolute;
+				/* 浮动后或绝对定位后会发生转换：行内元素具有块元素的特性，反之亦然，
+				此时该例子的宽度由内容来决定，需要人为设定宽度 */
+				width: 180px;
+				/* border: 1px solid yellow; */
+				text-align: center;
+				margin: 0; /* 清除默认外边距,方便计算 */
+				color:papayawhip;
+				bottom: 14px; /* 偏移量 */
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 典型子绝父相：图片上加文字 -->
+		<div>
+			<img src="../img/杨烁5.jpg" >
+			<h3>我是杨烁</h3>
+		</div>
+	</body>
+</html>

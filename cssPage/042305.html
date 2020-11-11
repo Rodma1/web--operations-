@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			/* 布局二:添加额外元素法 */
+			
+			.son1{
+				width: 100px;
+				height: 150px;
+				background-color: red;
+				float: left;
+			}
+			.son2{
+				width: 100px;
+				height: 150px;
+				background-color: blue;
+				float: left;
+			}
+			.father{
+				width: 300px;
+				
+				background-color: gold;
+				
+			}
+			.brother{
+				width: 300px;
+				height: 60px;
+				background-color: green;
+			}
+			.clear{
+				clear:both;/* 清楚左右浮动对后续元素的影响 */
+			}
+		</style>
+	</head>
+	<body>
+		<!-- (.father>.son1+.son2)+.bother -->
+		<div class="father">
+			<div class="son1"></div>
+			<div class="son2"></div>
+			<div class="clear"></div>
+		</div>
+		<div class="brother"></div>
+		
+	</body>
+</html>

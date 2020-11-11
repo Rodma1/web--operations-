@@ -1,0 +1,19 @@
+body {
+   background-color: #C0C0C0;
+}
+h1 {
+   background-color: rgb(135,206,235);
+}
+p {
+   background-color: LightGreen;
+}
+p1 {
+   padding: 30px;
+   background-image: url("../img/子夏楼.jpg");
+   color: white;   
+}
+p2{
+   background-image: url("../img/子夏楼.jpg");
+   background-repeat: no-repeat;
+   background-attachment: scroll;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+			}
+			.c1{
+				background-color: red;
+				position: relative; /* 第一步:指定对象,说明定位方式 */
+				left: 100px; /* 通过设定偏移量将其定位 */
+				top: 100px;
+				/* top: 200px;
+				left: 50px; */
+			}
+			.c2{
+				background-color: blue;
+				
+			}
+			.c3{
+				background-color: pink;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 定位：通过指定偏移量将盒子移动到某处，但其移开后原来的位置不能被其他元素占用
+		（灵魂飘走肉身还在）
+		使用相对定位方式的元素，仍处在标准流中，不会对其兄弟和祖先元素造成任何影响
+		relative
+				使用相对定位方式的元素，会相对于其原来位置为基准，通过指定偏移量进行偏移
+				偏移量设置关键词：
+					top顶部距基准位置的距离，也就是参照基准位置向下移动
+					bottom
+					left
+					right -->
+		<div class="c1"></div>
+		<div class="c2"></div>
+		<div class="c3"></div>
+	</body>
+</html>

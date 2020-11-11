@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- 计算某算法运行时间 -->
+		<script type="text/javascript">
+			console.log(myDate.getTime());
+			var myDate1=new Date();//在运算该算法之前实例化一个对象
+			var sum=0;
+			for(i=1;i<=1000000;i++){
+				sum+=i;
+			}
+			var myDate2=new Date();//在运算该算法之后实例化一个对象，
+			//myDate2=初始时间+该算法运行时间
+			console.log(myDate2.getTime()-myDate1.getTime());
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{myHtml}},{{msg}}
+			<p v-text="myHtml"></p>
+			<p v-html="myHtml"></p>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					msg:'hello Vue',
+					myHtml:'<h3>你好 vue</h3>'
+				}
+			})
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,45 @@
+<!--  属性中的值应使用 v-bind 指令,v-on 指令，它用于监听 DOM 事件： -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+			
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" v-bind:value="buttonText" v-on:click="test"/>
+			<!-- 相当于<input type="button"  :value="buttonText" @click="test"/> -->
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					buttonText:'开始',
+				},
+				methods:{
+					test(){
+						if(this.buttonText=='开始'){
+							this.buttonText='停止'
+						}
+						else{
+							this.buttonText='开始'
+						}
+							
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
+
+<!-- 完整语法 -->
+<!-- <a v-bind:href="url"></a> -->
+<!-- 缩写 -->
+<!-- <a :href="url"></a> -->
+<!-- v-on 缩写 -->
+<!-- 完整语法 -->
+<!-- <a v-on:click="doSomething"></a> -->
+<!-- 缩写 -->
+<!-- <a @click="doSomething"></a> -->

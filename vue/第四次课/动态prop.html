@@ -1,0 +1,33 @@
+<!-- 类似于用 v-bind 绑定 HTML 特性到一个表达式，也可以用 v-bind 动态绑定 props 的值到父组件的数据中。
+每当父组件的数据变化时，该变化也会传导给子组件： -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div>
+				<input v-model="parentMsg">
+				
+				<child v-bind:message="parentMsg"></child>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//注册
+			Vue.component('child',{
+				props:['message'],
+				template:'<span>{{message}}</span>'
+				})
+			//创建跟实例
+			new Vue({
+				el:'#app',
+				data:{
+					parentMsg:'父组件内容'
+				}
+			})
+		</script>
+	</body>
+</html>

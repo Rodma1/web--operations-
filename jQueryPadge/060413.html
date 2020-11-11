@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操作HTML元素</title>
+		<script src="../js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#content{
+				border: 1px solid black;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#content").click(function(){
+					console.log('ok');
+				})
+				$("#btn1").click(function(){
+					console.log($("#id1").text());
+				})
+				$("#btn2").click(function(){
+					console.log($("#id1").html());
+				})
+				$("#btn3").click(function(){
+					console.log($("#id1").text("<b>我是通过代码写入的内容</b>"));
+				})
+				$("#btn4").click(function(){
+					console.log($("#id1").html("<b>我是通过代码写入的内容</b>"));
+				})
+				$("#btn5").click(function(){
+					$("#content").append("abc");
+					$("#content").after("abc");
+					$("#content").prepend("def");
+					$("#content").before("def");
+				})
+				$("#btn6").click(function(){
+					$("#content").empty();
+				})
+				$("#btn7").click(function(){
+					$("#content").remove();
+				})
+				$("#btn8").click(function(){
+					//document.body.appendChild($("#content").clone());
+					$(document.body).append($("#content").clone(true));
+				})
+				$("#btn9").click(function(){
+					$("#content").replaceWith("<a href='http://baidu.com'>百度</a>");
+				})
+			})
+		</script>
+		<button type="button" id="btn1">获取text</button>
+		<button type="button" id="btn2">获取html</button>
+		<button type="button" id="btn3">设置text</button>
+		<button type="button" id="btn4">设置html</button>
+		<button type="button" id="btn5">添加元素</button>
+		<button type="button" id="btn6">删除元素1</button>
+		<button type="button" id="btn7">删除元素2</button>
+		<button type="button" id="btn8">复制元素</button>
+		<button type="button" id="btn9">替换对象</button>
+		<p id="id1"><b>我是一个有ID的段落</b></p>
+		<div id="content">
+			<b>元素</b>
+		</div>
+	</body>
+</html>

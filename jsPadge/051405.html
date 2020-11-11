@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- string应用：字符串截取 -->
+		<script type="text/javascript">
+			
+			var id="162958499906359985";
+			console.log(id.substr(6,8));//第六位开始截取八位
+			console.log(id.substr(6,4)+"-"+id.substr(10,2)+"-"+id.substr(12,2));
+			//从第六位开始截取4位  添加连接符"-",继续从第10位截取2位....
+			
+			
+			var sexN=id.substr(16,1);//从十六位开始截取1位
+			if(sexN%2===0){
+				console.log("女")
+			}else{
+				console.log("男");
+			}
+			
+			
+		</script>
+	</body>
+</html>

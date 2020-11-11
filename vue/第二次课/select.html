@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="utf-8"></script> 
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" name="" id="" value="确定"   @click="submit"/>
+			<select v-model="sex">
+				<option value="男">男</option>
+				<option value="女">女</option>
+				<option value="人妖">人妖</option>
+			</select>
+	
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					sex:''
+	
+				},
+				methods:{
+					submit(){
+						console.log("您选择的是："+ this.sex)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

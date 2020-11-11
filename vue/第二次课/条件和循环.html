@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p v-if="seen"> <h3>v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素</h3></p>
+			<div v-if="Math.random() > 0.5">
+			      随机生成一个数字，v-if语句大于0.5，v-else语句小于0.5
+			    </div>
+			    <div v-else>
+			      随机生成一个数字，v-else语句小于0.5，v-else语句小于0.5
+			    </div>
+				<p>还有v-else-if ，在 2.1.0 新增，顾名思义，用作 v-if 的 else-if 块。可以链式的多次使用</p>
+				<h1 v-show="ok">我们也可以使用 v-show 指令来根据条件展示元素,如果条件是真就输出</h1>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					seen:true,
+					ok:true
+				}
+			})
+		</script>
+	</body>
+</html>

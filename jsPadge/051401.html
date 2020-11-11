@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- 内置对象Date
+		由对象创建对象实例 -->
+		
+		<script type="text/javascript">
+			var myDate=new Date();//由对象创建对象实例
+			console.log(myDate.getYear());//1900年至今过了多少年
+			console.log(myDate.getFullYear());//年份
+			console.log(myDate.getMonth()+1);//月份
+			console.log(myDate.getDate());//日
+			console.log(myDate.getDay());//星期——0指周日
+			//  switch(myDate.getDay()){swith强判等
+			//myDate.getDay()输出的是数值型,case中的值要和swith的值在数值上和类型上均相等
+			
+			// 	case 0;
+			// 	console.log("星期日");
+			// 	break;
+			// 	case 1;
+			// 	console.log("星期一");
+			// 	break;
+			// 	case 4;
+			// 	console.log("星期四");
+			// 	break;
+			// 	default;
+			// 	console.log("error");
+			// }
+			
+			
+			
+			console.log(getFileName());//调用getFileName这个函数
+			function getFileName(){
+				var myDate=new Date();//声明日期对象实例
+				var str="";//声明
+				var s="";//声明中间变量s
+				str+=myDate.getFullYear();
+				s+=myDate.getMonth()+1;
+				str+=s.toString().length===1?"0"+s:s;
+				str+=myDate.getDate();
+				str+=myDate.getHours();
+				str+=myDate.getMinutes();
+				str+=myDate.getSeconds();
+				str+=myDate.getMilliseconds();
+				return str;
+			}
+			
+			
+			console.log(myDate.getTime());//计算从1970.01.01日开始到当前时间之间的毫秒数
+			
+			
+			
+			<!-- 年月日时分秒,快速输出日期 -->
+				//用本地的格式输出日期（输出运行该算法的计算机上的时间）
+				//较少用，因为每个人计算机上的时间都会有所偏差
+				console.log(myDate.toLocaleString());
+				console.log(myDate.toLocaleDateString());
+				console.log(myDate.toLocaleTimeString())
+				
+			
+			
+		</script>
+		
+	</body>
+</html>

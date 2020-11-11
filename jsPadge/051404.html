@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- String应用
+		反向输出字符串 -->
+		
+		<script type="text/javascript">
+			var str="abcdef";
+			var s="";//声明s存储他的值
+			for(var i=str.length;i>=0;i--){
+				s+=str.charAt(i);
+			}
+			console.log(s);
+			
+			
+			
+			//封装成函数
+			var str="abcdef";//声明
+			console.log(res(str));//调用
+			function res(str){
+				var s="";//声明s存储他的值
+				for(var i=str.length;i>=0;i--){
+					s+=str.charAt(i);
+				}
+				return s;
+			}
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

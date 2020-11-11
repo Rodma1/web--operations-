@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="button" name="" id="" value="确定"   @click="submit"/>
+			<input type="checkbox"   value="睡觉"  v-model="att"/>睡觉
+			<input type="checkbox"   value="吃饭" v-model="att"/>吃饭
+			<input type="checkbox"   value="学习" v-model="att"/>学习
+			<h4>
+				{{ att }}
+			</h4>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					// 通过数组存放数据
+					att:['学习']
+				},
+				methods:{
+					submit(){
+						console.log("你的选择是："+this.att)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

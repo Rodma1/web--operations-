@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../../jsVue/vue-2.4.0.js" type="text/javascript" charset="UTF-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+			<h3>方法一：渲染数组，可以绑定数据到数组来渲染一个列表</h3>
+			<h4>v-for 指令需要以 site in sites 形式的特殊语法， sites 是源数据数组并且 site 是数组元素迭代的别名。 </h4>
+			<ol>
+				<li v-for="site in sites">
+					{{site.name}}
+				</li>
+			</ol>
+			<h4>方法一点一：模版template中使用v-for</h3>
+			<ul>
+				<template v-for="site in sites">
+					<li>{{site.name}}</li>
+				</template>
+			</ul>
+			<h3>方法二：v-for 可以通过一个对象的属性来迭代数据，指令：value in object</h3>
+			<ul>
+				<li v-for="value in object">
+					{{value}}
+				</li>
+			</ul>
+			<h4>方法二点一：可以提供第二个的参数为键名：(value, key) in object</h4>
+			<ul>
+			    <li v-for="(value, key) in object">
+			    {{ key }} : {{ value }}
+			    </li>
+			 </ul>
+			<h4>方法二点二：第三个参数为索引：(value, key, index) in object</h4>
+			<ul>
+			    <li v-for="(value, key, index) in object">
+			     {{ index }}. {{ key }} : {{ value }}
+			    </li>
+			</ul>
+			<h3>方法三：v-for 也可以循环整数 n in 10</h3>
+			<ul>
+			    <li v-for="n in 10">
+			     {{ n }}
+			    </li>
+			 </ul>
+			
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					sites:[
+						{name:'我是一个数据'},
+						{name:'我是一个数据'}
+					],
+					object:{
+						name:'这还是一个数据',
+						name2:'不要问，问就是数据'
+					},
+					
+				},
+			})
+		</script>
+	</body>
+</html>
